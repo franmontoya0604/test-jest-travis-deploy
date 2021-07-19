@@ -1,0 +1,12 @@
+.Footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Footer-copy {
+   text-align: center;
+    
+  }
+  .Footer-title {
+   
+    
+  }
