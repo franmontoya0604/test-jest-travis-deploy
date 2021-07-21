@@ -1,9 +1,8 @@
-name: Build and Deploy #aca es el nombre de la action de github
-on: [push] # esta es la condicion de cuando se van a hacer las siguientes dos acciones , en este caso cada ves que se haga push
-   
+name: Build and Deploy
+on: [push]
 
-jobs:  
-  build:  #primer accion
+jobs:
+  build:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -12,13 +11,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: npm run build #hay que sacar el prod
+        run: npm run build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: dist
-          path: dist
-  deploy: #segunda accion
+          name: build
+          path: build
+  deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
@@ -28,11 +27,11 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }} # aqui va nuestro token de firebase para tener ese token hay que hacer en  consola firebase login:ci y luego ponerlo en secrets en github esto es para que no se vea
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
