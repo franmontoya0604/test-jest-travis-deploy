@@ -2,8 +2,8 @@ name: Build and Deploy #aca es el nombre de la action de github
 on: [push] # esta es la condicion de cuando se van a hacer las siguientes dos acciones , en este caso cada ves que se haga push
    
 
-jobs:  #primer accion
-  build:
+jobs:  
+  build:  #primer accion
     name: Build
     runs-on: ubuntu-latest
     steps:
