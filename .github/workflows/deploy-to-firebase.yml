@@ -1,6 +1,5 @@
 name: Build and Deploy
 on: [push] #esto lo ponemos para que se ejecuten las siguientes jobs de build y deploy cuando se haga push
-
 jobs:
   build:
     name: Build
@@ -34,4 +33,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          REACT_APP_FIREBASE_TOKEN: ${{ secrets.REACT_APP_FIREBASE_TOKEN }}
