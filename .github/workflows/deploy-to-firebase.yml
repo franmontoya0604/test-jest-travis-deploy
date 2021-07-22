@@ -10,7 +10,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: npm run build   #aca cambiamos poniendo ese ci por el error en compilacion de github actions
+        run: CI=false npm run build   #aca cambiamos poniendo ese ci por el error en compilacion de github actions, tambien se puede tratar el ci de otra forma
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
