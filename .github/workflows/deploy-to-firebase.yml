@@ -1,5 +1,5 @@
 name: Build and Deploy
-on: [push]
+on: [push] #esto lo ponemos para que se ejecuten las siguientes jobs de build y deploy cuando se haga push
 
 jobs:
   build:
@@ -11,12 +11,12 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: CI='' npm run build
+        run: CI='' npm run build   #aca cambiamos poniendo ese ci por el error en compilacion de github actions
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build #esto va en ves de dist para deplegar  nuestro proyecto y no lo que esta en dist
+          path: build
   deploy:
     name: Deploy
     needs: build
@@ -27,8 +27,8 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: dist
-          path: dist
+          name: build
+          path: build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
