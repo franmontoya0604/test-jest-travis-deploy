@@ -33,4 +33,4 @@ jobs:
         with:
           args: deploy --only hosting
         env:
-          REACT_APP_FIREBASE_TOKEN: ${{ secrets.REACT_APP_FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
