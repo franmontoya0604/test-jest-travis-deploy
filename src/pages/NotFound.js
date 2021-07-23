@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/NotFound.css'
 
 const NotFound = () => (
+  
   <section className="error">
     <section className="error__container">
       <h2 className="error__container--title">404</h2>

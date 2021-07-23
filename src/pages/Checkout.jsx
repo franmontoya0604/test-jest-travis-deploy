@@ -1,8 +1,10 @@
 import React,{useContext} from 'react';
 import './styles/Checkout.css';
+
 import {Link} from 'react-router-dom'
 import AppContext from '../context/AppContext'
 import HandleSumTotal from '../utils/index'
+
 
 const Checkout = () => {
 
@@ -17,6 +19,9 @@ removeFromCart(product, i)//esta funcion hadnle recibe el producto que queremos 
  
 
   return (
+
+    
+
     <div className="container">  {/* aca vamos a mostrar el pedido completo con su precios.*/}
       <div className="Checkout-content">
        {cart.length > 0 ? <h3>Lista de Pedidos:</h3> : <h3>no hay pedidos</h3>}

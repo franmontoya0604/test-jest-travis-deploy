@@ -14,7 +14,7 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: build #esto va en ves de dist para deplegar  nuestro proyecto y no lo que esta en dist
+          name: build #esto va en ves de dist para deplegar  nuestro proyecto y no lo que esta en dist por que nuestro bundle se guarda en build
           path: build
   deploy:
     name: Deploy
