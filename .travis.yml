@@ -7,8 +7,8 @@ node_js:  #version de node
 git:
   depth: 3
 script:   #una ves que estos script sean resueltos bien en el servidor de travis se va a seguir con el deploy
-  - yarn test
-  - yarn build  
+  - npm test
+  - npm build  
 deploy:
   provider: pages  #esto es el provider que es github page. osea nuestra pagina se va alojar en el servidor de github o host. 
   edge: true
