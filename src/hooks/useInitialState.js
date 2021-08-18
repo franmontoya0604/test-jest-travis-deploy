@@ -1,29 +1,8 @@
-import {useLayoutEffect,useState} from 'react'
+import React,{useState} from 'react'
 import initialState from '../initialState'
-import axios from 'axios';
-
-
-const API = "http://localhost:1337/products"; //esta es la api de strapi
 
 const useInitialState= ()=> {//este hook devuelve las funciones que tiene dentro y el state para luego tenerlos en el context.
-  const [state,setState] = useState(initialState);//aca en estate se guarda el initial state con los productos. y si la llamamos devuelve el state cigual con el producto en el cart. se guarda aca para poder actualizar el state y agregarle cosas
-
-  const [products,setProducts] = useState([]); //aca vamos aguardar los productos que llamemos de la api de strapi
-
-
-  useLayoutEffect(() => {
-    
-    async function apiCall() {  //asi usamos el async function en el useEffect
-    const  response = await axios(API) // con axios se puede pero con fetch no
-    
-
-    setProducts(response.data) //guardamosen product el llamdo a la api
-
-    
-    }
-    // Execute the created function directly
-    apiCall();
-  }, []);
+  const [state,setState] = useState(initialState)//aca en estate se guarda el initial state con los productos. y si la llamamos devuelve el state cigual con el producto en el cart. se guarda aca para poder actualizar el state y agregarle cosas
 
 const addToCart = (payload) => {//esta funcion va a guardar en el carrito del state lo que le pasemos.
    setState({ ...state,//aca se guardae en el estate el estado actualizado.
@@ -56,10 +35,9 @@ const addNewOrder = (payload)=>{//guardanos la nueva orden ene el estado
      removeFromCart,
      addToBuyer,
      addNewOrder,
-    products, //todo esto devuelve el estado y esto se le pasa a la api de context para poder usarlo entoda la app
      state //aca le pasamos el state a toda nuestra aplicacion luego de hacerle los cambios. esto que devuelve se usa en el app para darle el value al context.
  }
 
 }
 
-export default useInitialState;
+export default useInitialState

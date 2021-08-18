@@ -5,7 +5,7 @@ import './styles/products.css'
 const Product = ({product,handleAddToCart}) => {
     return (
         <div className="Products-item">
-            <img src={`http://localhost:1337${product.image[0].url}`} alt={product.title}/> {/*asi accedemos a la imagen desde strapi */}
+            <img src={product.image} alt={product.title}/>
             <div className="Products-item-info">
 <h2 >{product.title}
     <span>$ {' '} {product.price}</span>
