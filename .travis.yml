@@ -7,8 +7,8 @@ node_js:  #version de node
 git:
   depth: 3
 script:   #una ves que estos script sean resueltos bien en el servidor de travis se va a seguir con el deploy
-  - npm test
-  - npm build  
+  - yarn test
+  - yarn build  
 deploy:
   provider: pages  #esto es el provider que es github page. osea nuestra pagina se va alojar en el servidor de github o host. 
   edge: true
@@ -16,7 +16,7 @@ deploy:
   keep-history: true
   github-token: $GITHUB_TOKEN  #este es el token del proyecto creado en github page como en el otro nos pedia el de firebase. aca lo creamos en travis asi con este nombre y asi lo usamos oculto.
   local-dir: build/  #este es el directorio que debe mandarse a produccion el de nosotro es build
-  target-branch: gh-pages  #usamos github pages de host.
+  target-branch: gh-pages  #decimos a que brancha va ir el dployment.
   commit_message: "Deploy release ${TRAVIS_TAG}"
   on:
     branch: main
