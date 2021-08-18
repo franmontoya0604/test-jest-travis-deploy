@@ -3,7 +3,7 @@ cache:
   directories:
     - ~/.npm
 node_js:  #version de node
-  - '12'
+  - '13'
 git:
   depth: 3
 script:   #una ves que estos script sean resueltos bien en el servidor de travis se va a seguir con el deploy
@@ -14,7 +14,7 @@ deploy:
   edge: true
   skip-cleanup: true
   keep-history: true
-  github-token: $GITHUB_TOKEN  #este es el token del proyecto creado en github page como en el otro nos pedia el de firebase.
+  github-token: $GITHUB_TOKEN  #este es el token del proyecto creado en github page como en el otro nos pedia el de firebase. aca lo creamos en travis asi con este nombre y asi lo usamos oculto.
   local-dir: build/  #este es el directorio que debe mandarse a produccion el de nosotro es build
   target-branch: gh-pages  #usamos github pages de host.
   commit_message: "Deploy release ${TRAVIS_TAG}"
