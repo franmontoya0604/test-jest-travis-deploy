@@ -19,4 +19,4 @@ deploy:
   
   commit_message: "Deploy release ${TRAVIS_TAG}"
   on:
-   all_branches: true
+   all_branches: true  #usando esto me fumciono el deploy

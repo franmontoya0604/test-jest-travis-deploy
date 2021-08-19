@@ -7,7 +7,7 @@ import AppContext from '../context/AppContext' //asi traemos el contexto y lo in
 
 const Header = () =>{
 
-  const {cart} = useContext(AppContext);//traemos la funcion para gregar  al carrito y el estado que vamos a utilizar. cada ves que se use estos se actualiza.
+  const {state} = useContext(AppContext);//traemos la funcion para gregar  al carrito y el estado que vamos a utilizar. cada ves que se use estos se actualiza.
 
 
     return (
@@ -20,7 +20,7 @@ const Header = () =>{
     <Link to='/checkout'> 
      <i className="fas fa-shopping-basket "></i>
      </Link> 
-     {cart.length > 0  && <div className="Header-alert">{cart.length} </div>} {/*a esto no lo ejecuta el shallow */}
+     {state.cart.length > 0  && <div className="Header-alert">{state.cart.length} </div>} {/*a esto no lo ejecuta el shallow */}
      </div>
   
 </nav>

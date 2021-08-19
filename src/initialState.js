@@ -1,4 +1,5 @@
 const initialState =  {
+ 
     cart: [  {
       'id': '1',
       'image': 'https://arepa.s3.amazonaws.com/camiseta.png',
@@ -57,6 +58,7 @@ const initialState =  {
         'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       },
     ],
-  };
+  
+};
   
   export default initialState;
