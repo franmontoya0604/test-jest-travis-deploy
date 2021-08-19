@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { mount, shallow } from 'enzyme';
 import ProviderMock from '../../__mocks__/ProviderMock';
 import Header from '../../components/Header';
@@ -9,11 +9,11 @@ import renderer from 'react-test-renderer'; // de este utils usamoscreate para r
 describe('<Header />', () => {
   test('Render del componente Header', () => {
     const header = shallow(
-      <ProviderMock> {/*ponemos dentro del mock el componente que vaya a adquirir los datos del provider , asi aplicamos este mock*/}
+      <ProviderMock> {/*ponemos dentro del mock el componente que vaya a adquirir los datos del provider , asi aplicamos este mock
         <Header />
       </ProviderMock>,
     );
-    expect(header.length).toEqual(1); /*aca comprobamos que este renderizad oel header */
+    expect(header.length).toEqual(1); /*aca comprobamos que este renderizad oel header 
   });
   test('Render del Titulo', () => {
     const header = mount(
@@ -42,3 +42,4 @@ describe('header snapshot',() => {
 })
 
 );
+*/
